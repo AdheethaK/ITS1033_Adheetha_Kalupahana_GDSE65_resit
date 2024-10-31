@@ -24,34 +24,34 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BoardController implements Initializable{
-    @FXML private AnchorPane root;
+    @FXML
+    private AnchorPane root;
 
-    @FXML private Circle circle3x1;
-    @FXML private Circle circle3x2;
-    @FXML private Circle circle3x3;
-    @FXML private Circle circle2x1;
-    @FXML private Circle circle2x2;
-    @FXML private Circle circle2x3;
-    @FXML private Circle circle1x1;
-    @FXML private Circle circle1x2;
-    @FXML private Circle circle1x3;
+    @FXML private ImageView imgPiece_1x1;
+    @FXML private ImageView imgPiece_1x2;
+    @FXML private ImageView imgPiece_2x0;
+    @FXML private ImageView imgPiece_1x0;
+    @FXML private ImageView imgPiece_0x0;
+    @FXML private ImageView imgPiece_2x1;
+    @FXML private ImageView imgPiece_2x2;
+    @FXML private ImageView imgPiece_0x1;
+    @FXML private ImageView imgPiece_0x2;
 
-    @FXML private Label lblPlayerName;
-    @FXML private Label lblYou;
-    @FXML private Label lblAI;
     @FXML private ImageView btnBack;
-    @FXML private ImageView btnClose;
+    @FXML private Label lblPlayerName;
+    @FXML private ImageView imgPlayer;
+    @FXML private Label lblYou;
+    @FXML private ImageView imgAI;
+    @FXML private Label lblAI;
     @FXML private Label lblYourScore;
     @FXML private Label lblYourTurn;
     @FXML private Label lblYourScoreNumber;
     @FXML private Label lblAIScore;
     @FXML private Label lblAITurn;
     @FXML private Label lblAIScoreNumber;
+    @FXML private ImageView btnClose;
 
     CreatePlayerController controller = WindowFXMLLoader.getFxmlLoaderCreatePlayerController().getController();
-
-    //yellow : #ffb600
-    // red : #ff2020
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -69,57 +69,57 @@ public class BoardController implements Initializable{
         }
     }
 
+
     @FXML
-    void circle1x1_OnMouseClicked(MouseEvent event) {
-        System.out.println("1 x 1 Circle Clicked :)");
-    }
-    @FXML
-    void circle1x2_OnMouseClicked(MouseEvent event) {
-        System.out.println("1 x 2 Circle Clicked :)");
+    void imgPiece_0x0_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle1x3_OnMouseClicked(MouseEvent event) {
-        System.out.println("1 x 3 Circle Clicked :)");
+    void imgPiece_0x1_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle2x1_OnMouseClicked(MouseEvent event) {
-        System.out.println("2 x 1 Circle Clicked :)");
+    void imgPiece_0x2_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle2x2_OnMouseClicked(MouseEvent event) {
-        System.out.println("2 x 2 Circle Clicked :)");
+    void imgPiece_1x0_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle2x3_OnMouseClicked(MouseEvent event) {
-        System.out.println("2 x 3 Circle Clicked :)");
+    void imgPiece_1x1_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle3x1_OnMouseClicked(MouseEvent event) {
-        System.out.println("3 x 1 Circle Clicked :)");
+    void imgPiece_1x2_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle3x2_OnMouseClicked(MouseEvent event) {
-        System.out.println("3 x 2 Circle Clicked :)");
+    void imgPiece_2x0_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
-    void circle3x3_OnMouseClicked(MouseEvent event) {
-        System.out.println("3 x 3 Circle Clicked :)");
+    void imgPiece_2x1_OnMouseClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void imgPiece_2x2_OnMouseClicked(MouseEvent event) {
+
     }
 
     @FXML
     void btnCloseOnMouseClicked(MouseEvent mouseEvent) {
-        System.out.println("The Player name : "+controller.txtName.getText());
-//        System.out.println("close pressed");
-//        Stage stage = (Stage) btnClose.getScene().getWindow();
-//        stage.close();
-//        WindowFXMLLoader.emptyFxmlLoaderBoardController();
+        Stage stage = (Stage) btnClose.getScene().getWindow();
+        stage.close();
+        WindowFXMLLoader.emptyFxmlLoaderBoardController();
     }
 
     public void addPlayerNameToBoard(){
