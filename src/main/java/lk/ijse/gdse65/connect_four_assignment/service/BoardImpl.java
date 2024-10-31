@@ -63,7 +63,18 @@ public class BoardImpl implements Board{
     //Displays the current board state in the console
     @Override
     public void printBoard() {
-
+        System.out.println("|"+print_piece(pieces[2][0])+"|"+print_piece(pieces[2][1])+"|"+print_piece(pieces[2][2]));
+        System.out.println("|"+print_piece(pieces[1][0])+"|"+print_piece(pieces[1][1])+"|"+print_piece(pieces[1][2]));
+        System.out.println("|"+print_piece(pieces[0][0])+"|"+print_piece(pieces[0][1])+"|"+print_piece(pieces[0][2]));
+    }
+    public String print_piece(Piece piece){
+        if (piece == Piece.EMPTY){
+            return " ";
+        } else if (piece == Piece.X) {
+            return "X";
+        } else {
+            return " ";
+        }
     }
 
 }
