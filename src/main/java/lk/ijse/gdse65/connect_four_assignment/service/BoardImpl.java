@@ -55,8 +55,92 @@ public class BoardImpl implements Board{
     }
 
     //Checks if there is a winner,returns the winning piece or indicates a tie/no winner.
+
+    //Piece[COLUMNS][ROWS]
     @Override
     public Winner checkWinner() {
+
+        for( int i = 0 ; i < pieces.length ; i++ ){
+
+            // pieces[i][0] + pieces[i][1] + pieces[i][2]
+            if(pieces[i][0] != Piece.EMPTY && pieces[i][1] != Piece.EMPTY && pieces[i][2] != Piece.EMPTY){
+
+                if(pieces[i][0] == Piece.O && pieces[i][1] == Piece.O && pieces[i][2] == Piece.O){
+
+                    return new Winner(Piece.O,i,0,i,1,i,2);
+
+                }else if (pieces[i][0] == Piece.X && pieces[i][1] == Piece.X && pieces[i][2] == Piece.X){
+
+                    return new Winner(Piece.X,i,0,i,1,i,2);
+
+                }
+            }
+            // pieces[0][i] + pieces[1][i] + pieces[2][i]
+            if(pieces[0][i] != Piece.EMPTY && pieces[1][i] != Piece.EMPTY && pieces[2][i] != Piece.EMPTY){
+
+                if(pieces[0][i] == Piece.O && pieces[1][i] == Piece.O && pieces[2][i] == Piece.O){
+
+                    return new Winner(Piece.O,0,i,1,i,2,i);
+
+                }else if (pieces[0][i] == Piece.X && pieces[1][i] == Piece.X && pieces[2][i] == Piece.X){
+
+                    return new Winner(Piece.X,0,i,1,i,2,i);
+
+                }
+            }
+            // pieces[0][2] + pieces[1][1] + pieces[2][0]
+            if(pieces[0][2] != Piece.EMPTY && pieces[1][1] != Piece.EMPTY && pieces[2][0] != Piece.EMPTY){
+
+                if(pieces[0][2] == Piece.O && pieces[1][1] == Piece.O && pieces[2][0] == Piece.O){
+
+                    return new Winner(Piece.O,0,2,1,1,2,0);
+
+                }else if (pieces[0][2] == Piece.X && pieces[1][1] == Piece.X && pieces[2][0] == Piece.X){
+
+                    return new Winner(Piece.X,0,2,1,1,2,0);
+
+                }
+            }
+            // pieces[0][0] + pieces[1][1] + pieces[2][2]
+            if(pieces[0][0] != Piece.EMPTY && pieces[1][1] != Piece.EMPTY && pieces[2][2] != Piece.EMPTY){
+
+                if(pieces[0][0] == Piece.O && pieces[1][1] == Piece.O && pieces[2][2] == Piece.O){
+
+                    return new Winner(Piece.O,0,0,1,1,2,2);
+
+                }else if (pieces[0][0] == Piece.X && pieces[1][1] == Piece.X && pieces[2][2] == Piece.X){
+
+                    return new Winner(Piece.X,0,0,1,1,2,2);
+
+                }
+            }
+        }
+
+        // pieces[0][0] + pieces[0][1] + pieces[0][2]
+        if(pieces[0][0] != Piece.EMPTY && pieces[0][1] != Piece.EMPTY && pieces[0][2] != Piece.EMPTY){
+            if(pieces[0][0] == Piece.O && pieces[0][1] == Piece.O && pieces[0][2] == Piece.O){
+
+                return new Winner(Piece.O,0,0,0,1,0,2);
+
+            }else if (pieces[0][0] == Piece.X && pieces[0][1] == Piece.X && pieces[0][2] == Piece.X){
+
+                return new Winner(Piece.X,0,0,0,1,0,2);
+
+            }
+        }
+        // pieces[1][0] + pieces[1][1] + pieces[1][2]
+        if(pieces[1][0] != Piece.EMPTY && pieces[1][1] != Piece.EMPTY && pieces[1][2] != Piece.EMPTY){
+            if(pieces[1][0] == Piece.O && pieces[1][1] == Piece.O && pieces[1][2] == Piece.O){
+
+                return new Winner(Piece.O,1,0,1,1,1,2);
+
+            }else if (pieces[1][0] == Piece.X && pieces[1][1] == Piece.X && pieces[1][2] == Piece.X){
+
+                return new Winner(Piece.X,1,0,1,1,1,2);
+
+            }
+        }
+
         return null;
     }
 
@@ -68,9 +152,9 @@ public class BoardImpl implements Board{
         System.out.println("|"+print_piece(pieces[0][0])+"|"+print_piece(pieces[0][1])+"|"+print_piece(pieces[0][2]));
     }
     public String print_piece(Piece piece){
-        if (piece == Piece.EMPTY){
-            return " ";
-        } else if (piece == Piece.X) {
+        if (piece == Piece.O){
+            return "O";
+        } if(piece == Piece.X) {
             return "X";
         } else {
             return " ";
