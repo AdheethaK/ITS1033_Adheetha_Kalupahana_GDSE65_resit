@@ -44,73 +44,46 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0062ff" height="125.0" layoutX="10.0" layoutY="9.0" stroke="WHITE" strokeType="INSIDE" width="152.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0062ff" height="125.0" layoutX="10.0" layoutY="9.0" stroke="WHITE" strokeType="INSIDE" width="152.0" GridPane.rowIndex="2" />
             <ImageView fx:id="imgPiece_1x1" fitHeight="84.0" fitWidth="103.0" onMouseClicked="#imgPiece_1x1_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_1x2" fitHeight="84.0" fitWidth="103.0" layoutX="196.0" layoutY="152.0" onMouseClicked="#imgPiece_1x2_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../asset/circle_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_2x0" fitHeight="84.0" fitWidth="103.0" layoutX="196.0" layoutY="152.0" onMouseClicked="#imgPiece_2x0_OnMouseClicked" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_1x0" fitHeight="84.0" fitWidth="103.0" layoutX="44.0" layoutY="30.0" onMouseClicked="#imgPiece_1x0_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_0x0" fitHeight="84.0" fitWidth="103.0" layoutX="44.0" layoutY="152.0" onMouseClicked="#imgPiece_0x0_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_2x1" fitHeight="84.0" fitWidth="103.0" layoutX="44.0" layoutY="30.0" onMouseClicked="#imgPiece_2x1_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_2x2" fitHeight="84.0" fitWidth="103.0" layoutX="196.0" layoutY="30.0" onMouseClicked="#imgPiece_2x2_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_0x1" fitHeight="84.0" fitWidth="103.0" layoutX="348.0" layoutY="30.0" onMouseClicked="#imgPiece_0x1_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
             <ImageView fx:id="imgPiece_0x2" fitHeight="84.0" fitWidth="103.0" layoutX="196.0" layoutY="274.0" onMouseClicked="#imgPiece_0x2_OnMouseClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <image>
-                  <Image url="@../asset/cross_icon.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

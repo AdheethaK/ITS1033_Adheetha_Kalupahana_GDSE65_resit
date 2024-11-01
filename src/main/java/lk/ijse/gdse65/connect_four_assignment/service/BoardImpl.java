@@ -41,7 +41,7 @@ public class BoardImpl implements Board{
     // Checks whether a move to the specified row and column is valid
     @Override
     public Boolean isLegalMove(int row, int col) {
-        if(pieces[row][col] == Piece.EMPTY){
+        if(pieces[col][row] == Piece.EMPTY){
             return true;
         }else {
             return false;
@@ -51,7 +51,7 @@ public class BoardImpl implements Board{
     // Updates the board by placing a piece ( X or 0 ) at the specified location
     @Override
     public void updateMove(int row, int col, Piece piece) {
-        pieces[row][col] = piece;
+        pieces[col][row] = piece;
     }
 
     //Checks if there is a winner,returns the winning piece or indicates a tie/no winner.

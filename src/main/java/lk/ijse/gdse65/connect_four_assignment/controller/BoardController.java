@@ -7,23 +7,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import lk.ijse.gdse65.connect_four_assignment.service.*;
 import lk.ijse.gdse65.connect_four_assignment.util.Navigation;
 import lk.ijse.gdse65.connect_four_assignment.util.NewWindowUI;
 import lk.ijse.gdse65.connect_four_assignment.util.Routes;
 import lk.ijse.gdse65.connect_four_assignment.util.WindowFXMLLoader;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class BoardController implements Initializable{
+public class BoardController implements Initializable , BoardUI {
     @FXML
     private AnchorPane root;
 
@@ -52,12 +55,25 @@ public class BoardController implements Initializable{
     @FXML private ImageView btnClose;
 
     CreatePlayerController controller = WindowFXMLLoader.getFxmlLoaderCreatePlayerController().getController();
+    private boolean isAiPlaying;
+    private boolean isGameOver;
+
+    private Player humanPlayer;
+    private Player aiPlayer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         addPlayerNameToBoard();
+
         lblYourTurn.setOpacity(1);
+        isAiPlaying = false;
         lblAITurn.setOpacity(0);
+
+        isGameOver = false;
+
+        Board newBoard = new BoardImpl(this);
+        humanPlayer = new HumanPlayer(newBoard);
+        aiPlayer = new AiPlayers(newBoard);
     }
 
     @FXML
@@ -72,46 +88,150 @@ public class BoardController implements Initializable{
 
     @FXML
     void imgPiece_0x0_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_0x0);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_0x0);
+            }
+        }
     }
 
     @FXML
     void imgPiece_0x1_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_0x1);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_0x1);
+            }
+        }
     }
 
     @FXML
     void imgPiece_0x2_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_0x2);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_0x2);
+            }
+        }
     }
 
     @FXML
     void imgPiece_1x0_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_1x0);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_1x0);
+            }
+        }
     }
 
     @FXML
     void imgPiece_1x1_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_1x1);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_1x1);
+            }
+        }
     }
 
     @FXML
     void imgPiece_1x2_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_1x2);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_1x2);
+            }
+        }
     }
 
     @FXML
     void imgPiece_2x0_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_2x0);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_2x0);
+            }
+        }
     }
 
     @FXML
     void imgPiece_2x1_OnMouseClicked(MouseEvent event) {
-
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_2x1);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_2x1);
+            }
+        }
     }
 
     @FXML
     void imgPiece_2x2_OnMouseClicked(MouseEvent event) {
+        if (!isGameOver){
+            if (!isAiPlaying){
+                update(0,0,true);
+                fillImage(true,imgPiece_2x2);
+            } else {
+                update(0,0,false);
+                fillImage(false,imgPiece_2x2);
+            }
+        }
+    }
+
+    @Override
+    public void update(int col, int row, boolean isHuman) {
+        if (isHuman){
+            lblYourTurn.setOpacity(0);
+            lblAITurn.setOpacity(1);
+            isAiPlaying = true;
+            System.out.println("update for human");
+        } else{
+            System.out.println("update for AI");
+            lblYourTurn.setOpacity(1);
+            lblAITurn.setOpacity(0);
+            isAiPlaying = false;
+        }
+    }
+    public void fillImage(boolean isHuman,ImageView imageView){
+        if (isHuman){
+            File file = new File("src/main/resources/lk/ijse/gdse65/connect_four_assignment/asset/cross_icon.png");
+            Image image = new Image(file.toURI().toString());
+           imageView.setImage(image);
+        }else{
+            System.out.println("fillImage for Ai accessed");
+            File file = new File("src/main/resources/lk/ijse/gdse65/connect_four_assignment/asset/circle_icon.png");
+            Image image = new Image(file.toURI().toString());
+            imageView.setImage(image);
+        }
+    }
+
+    @Override
+    public void NotifyWinner() {
 
     }
 
@@ -125,4 +245,5 @@ public class BoardController implements Initializable{
     public void addPlayerNameToBoard(){
         lblPlayerName.setText("Hi " + controller.txtName.getText());
     }
+
 }
