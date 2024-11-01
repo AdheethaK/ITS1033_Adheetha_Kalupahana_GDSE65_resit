@@ -32,7 +32,7 @@ public class BoardImpl implements Board{
     @Override
     public void initializeBoard() {
         for ( int i = 0 ; i < pieces.length ; i++ ){
-            for ( int j = 0 ; j < pieces[i].length ; j++ ){
+            for ( int j = 0 ; j < pieces.length ; j++ ){
                 pieces[i][j]=Piece.EMPTY;
             }
         }
@@ -140,7 +140,6 @@ public class BoardImpl implements Board{
 
             }
         }
-
         return null;
     }
 
